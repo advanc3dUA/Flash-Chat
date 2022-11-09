@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24909,13 +24909,13 @@
 			projectRoot = "";
 			targets = (
 				73CDC3D182DB953135F62609681B443D /* abseil */,
+				8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */,
 				445FD4CB16BB7BEE2D1C404951CDE14A /* BoringSSL-GRPC */,
 				6F8A929BDB6E633BE35459804508532F /* CLTypingLabel */,
 				6AE4A3D573DED275B034E20506596C62 /* FirebaseAuth */,
 				4402AFF83DBDC4DD07E198685FDC2DF2 /* FirebaseCore */,
 				25E9E9A17BC3F670357D7385C521E48E /* FirebaseCoreInternal */,
 				DBA2B63E3A5FE83FE89E731664C9269F /* FirebaseFirestore */,
-				8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */,
 				1C5E43B0A9555E7C2E43A6D7C8A23CF6 /* gRPC-C++ */,
 				3B8CAC3956E59F928387D0C6310E3B37 /* gRPC-C++-gRPCCertificates-Cpp */,
 				50F380A87A4FC4EC7EE3AC9BDADB6D2D /* gRPC-Core */,
@@ -25056,6 +25056,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		53358A87D558B5A64E6AC56DBBA392F9 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25074,6 +25075,7 @@
 		};
 		803A2ADFA3D64086E11CFEFC4C6CFBD9 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25092,6 +25094,7 @@
 		};
 		A50E5D51303A32ED76CC9B30406CECF0 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25110,6 +25113,7 @@
 		};
 		A5A35713AEAA2AB5B7AD9AD90847CDF4 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25128,6 +25132,7 @@
 		};
 		E365489B623A2DEA77F73E45B0BD2EFE /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -27549,7 +27554,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BoringSSL-GRPC/BoringSSL-GRPC-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BoringSSL-GRPC/BoringSSL-GRPC-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -28063,7 +28068,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BoringSSL-GRPC/BoringSSL-GRPC-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BoringSSL-GRPC/BoringSSL-GRPC-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
