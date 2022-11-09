@@ -1,10 +1,3 @@
-//
-//  ChatViewController.swift
-//  Flash Chat iOS13
-//
-//  Created by Angela Yu on 21/10/2019.
-//  Copyright © 2019 Angela Yu. All rights reserved.
-//
 
 import UIKit
 import FirebaseAuth
@@ -22,9 +15,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         // navigation setup
-        title = K.appName
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "BrandLightBlue") ?? .white]
-        navigationItem.hidesBackButton = true
+        configureNavigationBar()
         
         // tableView setup
         tableView.dataSource = self
@@ -34,6 +25,16 @@ class ChatViewController: UIViewController {
         loadMessages()
     }
     
+    private func configureNavigationBar() {
+        title = K.appName
+        let appearence = UINavigationBarAppearance()
+        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "BrandLightBlue") ?? .white]
+        appearence.configureWithOpaqueBackground()
+        appearence.backgroundColor = UIColor(named: "BrandPurple")
+        navigationController?.navigationBar.standardAppearance = appearence
+        navigationController?.navigationBar.scrollEdgeAppearance = appearence
+        navigationItem.hidesBackButton = true
+    }
     private func loadMessages() {
         db.collection(K.FStore.collectionName)
             .order(by: K.FStore.dateField)
@@ -65,6 +66,7 @@ class ChatViewController: UIViewController {
                 if let error = error {
                     print("there was an error saving message to db: \(error)")
                 } else {
+                    self.messageTextfield.text = ""
                     print("message successfully saved")
                 }
             }
