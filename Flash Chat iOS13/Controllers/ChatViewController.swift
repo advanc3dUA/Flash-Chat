@@ -28,9 +28,9 @@ class ChatViewController: UIViewController {
     private func configureNavigationBar() {
         title = K.appName
         let appearence = UINavigationBarAppearance()
-        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: "BrandLightBlue") ?? .white]
+        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor(named: K.BrandColors.lightPurple) ?? .white]
         appearence.configureWithOpaqueBackground()
-        appearence.backgroundColor = UIColor(named: "BrandPurple")
+        appearence.backgroundColor = UIColor(named: K.BrandColors.blue)
         navigationController?.navigationBar.standardAppearance = appearence
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
         navigationItem.hidesBackButton = true
@@ -49,6 +49,8 @@ class ChatViewController: UIViewController {
                         self.messages.append(Message(sender: document.data()[K.FStore.senderField] as! String, body: document.data()[K.FStore.bodyField] as! String))
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                         }
                     }
                 }
@@ -66,8 +68,10 @@ class ChatViewController: UIViewController {
                 if let error = error {
                     print("there was an error saving message to db: \(error)")
                 } else {
-                    self.messageTextfield.text = ""
                     print("message successfully saved")
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
         }
